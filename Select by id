@@ -1,0 +1,46 @@
+
+//This is the index file.The index file has been populated with an unordered list and inside the unordere list we want to change the fire color to red in the main.js using jquery
+
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<!-- /Select by id/ -->
+<h4>Hot</h4>
+
+<ul>
+<li  id ="fire">Fire</li>
+<li>Lava</li>
+<li>Steam</li>
+</ul>
+
+<h4>Cold</h4>
+
+<ul>
+<li>Snow</li>
+<li>Ice</li>
+<ul>
+<li>Heavy Rain</li>
+<li>Rain</li>
+</ul>
+</ul>
+</body>
+</html>
+
+
+//style.css contains the styling that we want to apply to the fire
+.highlight{
+	color:#F00;
+}
+
+
+//main.js is where we call the style.css and the id in the index file.
+
+$(document).ready(function(){
+	$('#fire').addClass('highlight');
+});
