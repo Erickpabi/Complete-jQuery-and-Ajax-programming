@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<h4>Hot</h4>
+
+<ul>
+<li  id ="fire" class="non-solid">Fire</li>
+<li class="solid">Lava</li>
+<li class="non-solid">Steam</li>
+</ul>
+
+<h4>Cold</h4>
+
+<ul>
+<li class="solid">Snow</li>
+<li class="solid">Ice</li>
+<li class="non-solid">coca-cola</li>
+<ul>
+<li class="non-solid">Heavy Rain</li>
+<li class="solid">Rain</li>
+</ul>
+</ul>
+</body>
+</html>
+
+
+//main.js
+//This is to select both solid and non-solid
+$(document).ready(function(){
+	$('.non-solid,.solid').addClass('highlight');
+});
+
+//This is to select only non-solid
+$(document).ready(function(){
+	$('.non-solid').addClass('highlight');
+});
+
+//This is to select only solid
+$(document).ready(function(){
+	$('.solid').addClass('highlight');
+});
+
