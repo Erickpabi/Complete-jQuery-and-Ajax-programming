@@ -1,0 +1,6 @@
+
+//What this basically does is to change the body of the text dynamically.
+
+$(document).ready(function(){
+	$('body').html('<strong>Hi world</strong>');
+}); 
