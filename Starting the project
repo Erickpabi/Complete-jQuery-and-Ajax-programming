@@ -1,0 +1,24 @@
+//This is my index.html file 
+
+//The link references the various jquery and js files on my local computer
+
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+
+//main.js
+//This is used to test if the js file works
+console.log('Hello world');
