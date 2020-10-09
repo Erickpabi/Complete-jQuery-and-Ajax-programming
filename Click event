@@ -1,0 +1,39 @@
+//index.html
+
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="container">
+
+<div class="box"></div>
+
+ 
+</div>
+</body>
+</html>
+
+
+//main.js--The click is what the user will do.The on is the function for the event and then the function that comes after the click is the callback function.In the 
+//callback function you can either use addClass or toggleClass.
+$(document).ready(function(){
+	$('.box').on('click',function(){
+		$('.box').toggleClass('highlight');
+	});
+});
+
+//style.css
+.box{
+	width:150px;
+	height:150px;
+	background-color:#CFC
+}
+
+.highlight{
+	background-color:#FCC
+}
