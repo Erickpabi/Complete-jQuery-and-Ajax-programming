@@ -1,0 +1,149 @@
+//main.js
+var cart=0;
+
+
+function addItem(id,name,description,price,moreInfo){
+	
+	let html='';
+	 html += '<div class="item" data-id="' + id + '">';
+ html += '<div class="name">'+ name +'</div>';
+html += '<img src="C:\Users\Gebruiker\Desktop\assets\yy.jpg"></img>';
+html += '<div class="description"> '+ description +'</div>';
+html += '<div class="price">'+ price +'</div>';
+html += '<button class="item-add">Add to cart</button>';
+html += '<button class="item-remove">Remove</button>';
+html += '<br/>';
+html += '<a class="more-info-link" href="#">More info</a>';
+html += '<div class="more-info"> '+ moreInfo +'</div>';
+html += '</div>';
+
+$('#container').prepend(html);
+};
+
+$(document).ready(function(){
+$('#container').on('click','.more-info-link',function(e){
+	e.preventDefault();
+	$(this).parent().find('.more-info').slideToggle('slow');
+	$(this)
+.animate({"margin-left":10},'fast')
+.animate({"margin-left": 0},'fast');
+});
+
+
+$('#container').on('click','.item-remove',function(){
+	$(this).parent().remove();
+
+});
+
+
+$.ajax('data/item.json',{
+	dataType:'json',
+	contentType:'application/json',
+cache:false
+})
+.done(function(response){
+	let items=response.items;
+	items.forEach(function(item){
+	addItem(item.id,item.name,item.description,item.price,item.more-info);
+})
+})
+ .fail(function(request, errorType, errorMessage){
+    console.log(errorMessage);
+  })
+  .always(function(){
+
+  });
+$('#container').on('click','.item-add',function(){
+	 let id = $(this).parent().data('id');
+	 $.ajax('data/addToCart.json', {
+      type: 'post',
+      data: { id: id },
+      dataType: 'json',
+      contentType: 'application/json'
+    })
+	.done(function(response) {
+      if (response.message === 'success') {
+        let price = response.price;
+
+        cart += price;
+
+        $('#cart-container').text('$' + cart);
+      }
+    });
+});
+
+
+//index.html
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="cart-container">
+$0
+</div>
+<div id="container">
+
+<br style="clear: left;"/> 
+</div>
+
+ 
+
+</body>
+</html>
+
+
+//style.css
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="cart-container">
+$0
+</div>
+<div id="container">
+
+<br style="clear: left;"/> 
+</div>
+
+ 
+
+</body>
+</html>
+
+//iem.json
+{
+"items: [{
+  "id": 1000,
+"name": "Santa Monica",
+"description":""This is a beach found on the shores of mauritania",
+"price":$300,
+"moreInfo":"Continue Reading"
+},{
+  "id": 1001,
+"name": "Santa Porto",
+"description":""This is a beach found on the shores of mauritania",
+"price":$300,
+"moreInfo":"Continue Reading"
+},{
+  "id": 1002,
+"name": "Santa Herbert",
+"description":""This is a beach found on the shores of mauritania",
+"price":$300,
+"moreInfo":"Continue Reading"
+}
+
+//addToCart.json
+{
+  "message": "success",
+  "price": 499
+}
