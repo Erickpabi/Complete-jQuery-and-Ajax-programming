@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="admin-container">
+<input id="input-item" type="text"></input>
+<button id="button-create">Add</button>
+</div>
+<div id="container">
+<div class="item">
+<div class="name">Santa Monica</div>
+<img src="C:\Users\Gebruiker\Desktop\assets\yy.jpg"></img>
+<div class="description"> This is a beach found on the shores of Mauritania.</div>
+
+<div class="price">$300</div>
+<button class="item-add">Add to cart</button>
+<button class="item-remove">Remove</button>
+<br/>
+<a href="#">More info</a>
+<div class="more-info"> Continue reading</div>
+<br style="clear: left;"/> 
+</div>
+</div>
+ 
+
+</body>
+</html>
+
+
+//main.js
+$(document).ready(function(){
+$('#button-create').on('click',function(){
+	let name=$('#input-item').val();
+	$('#input-item').val('');
+	let html='';
+	html +='<div class="item">';
+ html += '<div class="name">'+ name +'</div>';
+html += '<img src="C:\Users\Gebruiker\Desktop\assets\yy.jpg"></img>';
+html += '<div class="description"> This is a beach found on the shores on Mauritania.</div>';
+html += '<div class="price">$300</div>';
+html += '<button class="item-add">Add to cart</button>';
+html += '<button class="item-remove">Remove</button>';
+html += '<br/>';
+html += '<a href="#">More info</a>';
+html += '<div class="more-info"> Continue reading</div>';
+html += '</div>';
+
+$('#container').append(html);
+});
+$('#container').on('click','.item-remove',function(){
+	$(this).parent().remove();
+
+});
+});
+
+
+//style.css
+body{
+	background-color:#EEE;
+}
+
+
+#container{
+	background-color:#FFF;
+	padding:12px;
+	margin:12px;
+}
+
+
+.item{
+	width:200px;
+	background-color:#DDD;
+	padding:10px;
+	float:left;
+	margin:4px;
+}
