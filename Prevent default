@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="container">
+
+<input  id="input-name" type="text" placeholder="Tell me your name"></input>
+<br/>
+<br/>
+<a href="http://google.com">I dont want to tell you my name </a>
+<div id="feedback">
+
+
+
+</div>
+</div>
+ 
+
+</body>
+</html>
+
+
+
+//main.js
+$(document).ready(function(){
+$('#input-name').on('keyup',function(){
+	let name= $(this).val();
+	$('#feedback').text('Nice to meet you ,' + name);
+});
+	$('a').on('click',function(e){
+e.preventDefault();
+		$('#feedback').text('Okay I understand');
+});
+});
+
+
+
