@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="container">
+
+<select id="select-menu">
+<option value="" data-price="">Select a course</option>
+<option value="5" data-price="1">Java</option>
+<option value="10" data-price="2">JSON</option>
+<option value="4" data-price="1">CSS</option>
+<option value="6" data-price="2">HTML</option>
+</select>
+
+<div id="feedback">
+
+
+
+</div>
+</div>
+ 
+
+</body>
+</html>
+
+//main.js
+$(document).ready(function(){
+$('#select-menu').on('change',function(){
+	let name = $('#select-menu option:selected').text();
+	let credithours = $('#select-menu option:selected').val();
+let priority=	$('#select-menu option:selected').data('price');
+
+
+if(credithours){
+$('#feedback').text('The course is ' 
++ name + ' and the credit hours is ' + credithours + 
+' the priority is' + priority );
+}
+else{
+	$('#feedback').empty();
+
+}
+});
+});
+ 
+/* $(document).ready(function(){
+	$('body').html('<strong>Hi world</strong>');
+}); */
