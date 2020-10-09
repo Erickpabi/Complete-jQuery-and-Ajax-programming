@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="container">
+<div class="title">Hot</div>
+<div class="hot">
+<div class="item non-solid">Fire</div>
+<div class="item solid">Lava</div>
+<div class="item non-solid">Steam</div>
+
+<br/>
+<div class="title">Cold</div>
+<div class="cold">
+<div class="item solid">Ice</div>
+<div class="item non-solid">Snow</div>
+
+<div class="item non-solid">Rain</div>
+
+ 
+</div>
+</body>
+</html>
+
+
+//style.css
+.highlight{
+	color:#00F;
+}
+
+.iem{
+	margin-left:10px;
+  
+  //main.js
+  $(document).ready(function(){
+	$('#container ')
+	.find('.hot')
+	.children('.non-solid')
+	.addClass('highlight');
+});
+
+$(document).ready(function(){
+	$('#container ')
+	.find('.hot')
+	.children('.solid')
+	.addClass('highlight');
+});
+
+$(document).ready(function(){
+	$('#container ')
+	.find('.hot')
+	.addClass('highlight');
+});
+
