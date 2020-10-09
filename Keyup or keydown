@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<script src="C:\Users\Gebruiker\Desktop\js\jquery-3.5.1.js"></script>
+<script src="C:\Users\Gebruiker\Desktop\js\main.js"></script>
+<link rel="stylesheet" type="text/css" href="C:\Users\Gebruiker\Desktop\css\style.css">
+</head>
+
+<body>
+<div id="container">
+
+<input  id="input-name" type="text" placeholder="Tell me your name"></input>
+
+<div id="feedback">
+
+
+
+</div>
+</div>
+ 
+
+</body>
+</html>
+
+
+//main.js--The reason why we use keyup instead of keydown is that keyup allows the computer enough time to process what is in the text field.If you use the keydown ,the last letter or character does not show unless you double space after the last letter
+$(document).ready(function(){
+$('#input-name').on('keyup',function(){
+	let name= $(this).val();
+	$('#feedback').text('Nice to meet you ,' + name);
+});
+});
+
